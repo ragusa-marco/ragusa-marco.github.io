@@ -1,35 +1,131 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Projects</title>
-  </head>
-  <body>
-    <h1>My GitHub Pages</h1>
-    <ul>
-      <li>/repo1/Repo 1</a></li>
-      <li>/repo2/Repo 2</a></li>
-      <li>/repo3/Repo 3</a></li>
-    </ul>
-  </body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Projects</title>
 
-
-<script>
-(async () => {
-  const res = await fetch('https://api.github.com/users/ragusa-marco/repos');
-  const repos = await res.json();
-
-  const list = document.createElement('ul');
-
-  repos.forEach(repo => {
-    if (repo.has_pages) {
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="/${repo.name}/">${repo.name}</a>`;
-      list.appendChild(li);
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f7f7f7;
+      color: #222;
     }
-  });
 
-  document.body.appendChild(list);
-})();
-</script>
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    p.subtitle {
+      color: #666;
+      margin-top: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 12px;
+      text-decoration: none;
+      color: #0366d6;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Marco's playground</h1>
+    <p class="subtitle">A collection of things I’ve built</p>
+  </header>
+
+  <main class="grid">
+
+    <div class="card">
+      <h2>Ramen Catch game</h2>
+      <p>Short description of what this project is about.</p>
+      <a href="/ramen-catch">View project →</a>
+    </div>
+
+    <div class="card">
+      <h2>Stop the ruler</h2>
+      <p>Another project with a short explanation.</p>
+      <a href="/stop-the-ruler">View project →</a>
+    </div>
+
+    <div class="card">
+      <h2>Circle fit</h2>
+      <p>Something interactive or experimental.</p>
+      <a href="/circle-fit">View project →</a>
+    </div>
+
+    <div class="card">
+      <h2>Circle countdown</h2>
+      <p>Something interactive or experimental.</p>
+      <a href="/circle-countdown">View project →</a>
+    </div>
+
+    <div class="card">
+      <h2>World map</h2>
+      <p>Something interactive or experimental.</p>
+      <a href="/world-map">View project →</a>
+    </div>
+
+    <div class="card">
+      <h2>Grammar sprint</h2>
+      <p>Something interactive or experimental.</p>
+      <a href="/grammar-sprint">View project →</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 · Built with GitHub Pages
+  </footer>
+
+</body>
+</html>
