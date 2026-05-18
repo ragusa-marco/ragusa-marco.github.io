@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Projects</title>
+  </head>
+  <body>
+    <h1>My GitHub Pages</h1>
+    <ul>
+      <li>/repo1/Repo 1</a></li>
+      <li>/repo2/Repo 2</a></li>
+      <li>/repo3/Repo 3</a></li>
+    </ul>
+  </body>
+</html>
+
+
+<script>
+(async () => {
+  const res = await fetch('https://api.github.com/users/ragusa-marco/repos');
+  const repos = await res.json();
+
+  const list = document.createElement('ul');
+
+  repos.forEach(repo => {
+    if (repo.has_pages) {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="/${repo.name}/">${repo.name}</a>`;
+      list.appendChild(li);
+    }
+  });
+
+  document.body.appendChild(list);
+})();
+</script>
